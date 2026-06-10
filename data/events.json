@@ -1,0 +1,102 @@
+{
+  "upcoming": {
+    "date": "2026-06-16",
+    "dateLabel": "16 June 2026",
+    "location": "EPFL AI Center",
+    "title": "AI for Biomolecules Mini-Symposium",
+    "description": "Join us for our mini-symposium with two invited speakers on RNA and biomolecular foundation models.",
+    "speakers": [
+      {
+        "name": "Elena Rivas",
+        "title": "RNA G-quadruplexes mediate cooperativity in HNRNPH binding and splicing regulation",
+        "affiliation": "Harvard University"
+      },
+      {
+        "name": "Kathi Zarnack",
+        "title": "RNA structure prediction and discovery: a unified computational framework",
+        "affiliation": "Julius Maximilians University Würzburg"
+      }
+    ]
+  },
+
+  "past": [
+    {
+      "date": "2026-06-09",
+      "dateLabel": "9 June 2026",
+      "location": "University of Bern",
+      "title": "AI for Biomolecules Mini-Symposium | June 9, 2026",
+      "speakers": [
+        { "name": "Cyril Malbranke", "affiliation": "EPFL" ,"title": "Protein Language Models with Extended Context: From Homologs to Proteomes"}
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "dateLabel": "15 April 2026",
+      "location": "EPFL AI Center",
+      "title": "AI for Biomolecules Mini-Symposium | April 15, 2026",
+      "speakers": [
+        { "name": "Xavier Hernandez Alias", "affiliation": "Max Planck Institute of Biochemistry" ,"title": "Multi-scale analysis of mRNA translation adaptation to nutrient shifts reveals novel regulatory elements"},
+        { "name": "Silvi Rouskin", "affiliation": "Harvard Medical School" ,"title": "Sequence is all you need- Large Language Models Decode the Structural Grammar of IRESes"}
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "dateLabel": "11 March 2026",
+      "location": "DDM (Bern)",
+      "title": "AI for Biomolecules Mini-Symposium | March 11, 2026",
+      "speakers": [
+        { "name": "Yu Li", "affiliation": "The Chinese University of Hong Kong" ,"title": "Deep learning methods for RNA structure and function prediction"},
+        { "name": "Pedro Beltrao", "affiliation": "ETH, SIB" ,"title": "Studying human genotype-to-phenotype associations through protein interaction-based AI models"}
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "dateLabel": "20 February 2026",
+      "location": "EPFL AI Center",
+      "title": "AI for Biomolecules Mini-Symposium | February 20, 2026",
+      "speakers": [
+        { "name": "Rodrigo Siqueira Reis", "affiliation": "University of Bern" ,"title": "A search for functional RNA structures"},
+        { "name": "Marta Szachniuk", "affiliation": "Poznan University of Technology" ,"title": "Graph Neural Networks for RNA Structure Prediction: Descriptors, Constraints & Generalization"}
+      ]
+    },
+    {
+      "date": "2026-01-14",
+      "dateLabel": "14 January 2026",
+      "location": "DDM (Bern)",
+      "title": "AI for Biomolecules Mini-Symposium | January 14, 2026",
+      "speakers": [
+        { "name": "Vamsi Nallapareddy", "affiliation": "EPFL" ,"title": "Deep learning reveals translation elongation determinants during amino acid deprivation"},
+        { "name": "Parth Bibekar", "affiliation": "EPFL" ,"title": "Context-aware geometric deep learning for RNA sequence design"}
+      ]
+    },
+    {
+      "date": "2025-12-17",
+      "dateLabel": "17 December 2025",
+      "location": "EPFL AI Center",
+      "title": "AI for Biomolecules Mini-Symposium | December 17, 2025",
+      "speakers": [
+        { "name": "Mile Sikic", "affiliation": "NUS" ,"title": "Cutting-edge research on RNA Language Models"},
+        { "name": "Sebastian Leidel", "affiliation": "University of Bern" ,"title": "RNA modifications, dyslexic ribosomes, and the use of LLMs"}
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "dateLabel": "19 November 2025",
+      "location": "DDM (Bern)",
+      "cancelled": true,
+      "speakers": []
+    },
+    {
+      "date": "2025-10-08",
+      "dateLabel": "8 October 2025",
+      "location": "EPFL AI Center",
+      "title": "Half-day symposium",
+      "speakers": [
+        {"name": "Raphaëlle Luisier"},
+        {"name": "Lisa Fournier"},
+        {"name": "Vincent Jung"},
+        {"name": "Charlotte Tumescheit"}
+      ]
+    }
+  ]
+}
