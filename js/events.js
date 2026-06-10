@@ -31,6 +31,23 @@ function renderSpeakers(speakers) {
     return `<ul class="speaker-list">${items.join("")}</ul>`;
 }
 
+function renderEventActions() {
+    return `
+        <div class="event-actions">
+            <div class="cta-row">
+                <a class="btn btn-primary" href="zoom/">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                    Join on Zoom
+                </a>
+                <a class="btn btn-secondary" href="registration/">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                    Register
+                </a>
+            </div>
+        </div>
+    `;
+}
+
 function renderEventMeta(event) {
     const tags = [
         `<span class="tag tag--date">${escapeHtml(event.dateLabel || event.date)}</span>`,
@@ -60,6 +77,7 @@ function renderEventCard(event, { upcoming = false } = {}) {
     const description = event.description
         ? `<p>${escapeHtml(event.description)}</p>`
         : "";
+    const actions = upcoming ? renderEventActions() : "";
 
     return `
         <article class="${classes.join(" ")}">
@@ -68,6 +86,7 @@ function renderEventCard(event, { upcoming = false } = {}) {
             ${renderEventMeta(event)}
             ${description}
             ${renderSpeakers(event.speakers)}
+            ${actions}
         </article>
     `;
 }
