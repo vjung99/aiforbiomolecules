@@ -1,25 +1,48 @@
 {
   "upcoming": {
-    "date": "2026-06-16",
-    "dateLabel": "16 June 2026",
-    "location": "EPFL AI Center",
+    "date": "2026-09-09",
+    "dateLabel": "9 September 2026",
+    "location": "IDIAP Research Institute",
     "title": "AI for Biomolecules Mini-Symposium",
-    "description": "Join us for our mini-symposium with two invited speakers on RNA and biomolecular foundation models.",
     "speakers": [
       {
-        "name": "Prof. Elena Rivas",
-        "title": "RNA G-quadruplexes mediate cooperativity in HNRNPH binding and splicing regulation",
-        "affiliation": "Harvard University"
+        "name": "Prof. Robert Hoehndorf",
+        "title": "What proteins do and how to predict it",
+        "time": "15:00 - 16:00",
+        "affiliation": "King Abdullah University of Science and Technology",
+        "description": "In my first research paper ever, at ISMB 2006, I asked a question that seemed unrelated to machine learning: what is a biological function, and how should we represent one? \nWe answered it with a top-level ontology of functions, because the biomedical ontologies of the time could not fully express what biologists knew about what proteins do. Twenty years later I approach the same problem from a learning perspective, as one of the central prediction tasks in bioinformatics; yet, how we represent biological functions still decides what can be predicted. In this talk I discuss biological functions from the perspective of representation, and the methods that turn those representations into predictions. I treat protein function prediction first as a classification problem with hierarchical constraints, and ask how those constraints can be enforced; extend it to graph-based learning, where functions relate to entities of many different kinds; and show how neuro-symbolic methods improve prediction by making the background theory part of the model rather than a filter applied afterwards. As a result, these methods allow us to generate hierarchically consistent predictions, zero-shot prediction of functions never observed on any protein, and system-wide completeness, coherence, and consistency across an entire genome."
       },
       {
-        "name": "Prof. Kathi Zarnack",
-        "title": "RNA structure prediction and discovery: a unified computational framework",
-        "affiliation": "Julius Maximilians University Würzburg"
+        "name": "Daniel Butnaru",
+        "title": "Developments in siRNA Efficacy Prediction: Chemistry-Aware Deep Learning for Modified Oligonucleotides",
+        "time": "16:00 - 17:00",
+        "affiliation": "Roche",
+        "description": 
+          "Small interfering RNAs (siRNAs) are a clinically validated therapeutic modality, yet designing potent, chemically modified candidates remains a costly and iterative process. While chemical modifications are essential for metabolic stability, target affinity, and clinical performance, conventional machine learning models generally fail to account for complex chemical modification patterns or generalize poorly beyond unmodified sequence data. \n \nIn the seminar, I will discuss recent developments in predicting siRNA activity, focusing on FENNEC (Fine-Tuned Ensemble of Neural Networks for siRNA Efficiency Characterization). FENNEC is a multimodal deep learning framework trained on a large-scale, patent-derived dataset spanning over 36,000 experimental datapoints and 1,134 distinct chemical modification patterns. By combining sequence-chemistry encodings, experimental covariates, and structural representations from pre-trained RNA foundation models (such as Orthrus), FENNEC accurately predicts gene knockdown efficacy on unseen target genes and to a certain degree to out-of-distribution modification patterns. I will share insights from our experimental validation on the AHSA1 transcript, explore model interpretability regarding position-specific modification rules, and illustrate how FENNEC can function as an in silico design oracle to optimize chemical modification architectures for RNA therapeutics."
       }
-    ]
-  },
-
+    ] 
+  }
+  ,
   "past": [
+    {
+      "date": "2026-06-16",
+      "dateLabel": "16 June 2026",
+      "location": "EPFL AI Center",
+      "title": "AI for Biomolecules Mini-Symposium",
+      "description": "Join us for our mini-symposium with two invited speakers on RNA and biomolecular foundation models.",
+      "speakers": [
+        {
+          "name": "Prof. Elena Rivas",
+          "title": "RNA G-quadruplexes mediate cooperativity in HNRNPH binding and splicing regulation",
+          "affiliation": "Harvard University"
+        },
+        {
+          "name": "Prof. Kathi Zarnack",
+          "title": "RNA structure prediction and discovery: a unified computational framework",
+          "affiliation": "Julius Maximilians University Würzburg"
+        }
+      ]
+    },
     {
       "date": "2026-06-09",
       "dateLabel": "9 June 2026",

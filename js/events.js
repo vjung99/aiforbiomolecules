@@ -18,12 +18,29 @@ function renderSpeakers(speakers) {
         const talk = talkTitle
             ? `<span class="speaker-talk">${escapeHtml(talkTitle)}</span>`
             : "";
+        const description = speaker.description
+            ? `<details class="speaker-abstract">
+                    <summary>
+                        <span class="speaker-abstract__show">Show abstract</span>
+                        <span class="speaker-abstract__hide">Hide abstract</span>
+                    </summary>
+                    <p class="speaker-description">${escapeHtml(speaker.description)}</p>
+               </details>`
+            : "";
+
+        const time = speaker.time
+            ? `<time class="speaker-time">${escapeHtml(speaker.time)}</time>`
+            : "";
 
         return `
             <li>
-                <span class="speaker-name">${escapeHtml(speaker.name)}</span>
-                ${talk}
+                <div class="speaker-heading">
+                    <span class="speaker-name">${escapeHtml(speaker.name)}</span>
+                    ${time}
+                </div>
                 ${affiliation}
+                ${talk}
+                ${description}
             </li>
         `;
     });
@@ -48,15 +65,29 @@ function renderEventActions() {
     `;
 }
 
-function renderEventMeta(event) {
+function renderEventMeta(event, { prominent = false } = {}) {
+    const date = event.dateLabel || event.date;
+    const cancelled = event.cancelled
+        ? '<span class="tag tag--cancelled">Cancelled</span>'
+        : "";
+
+    if (prominent) {
+        return `
+            <p class="event-meta event-meta--upcoming">
+                <time datetime="${escapeHtml(event.date)}">${escapeHtml(date)}</time>
+                <span class="event-meta__sep" aria-hidden="true">·</span>
+                <span>${escapeHtml(event.location)}</span>
+                ${cancelled}
+            </p>
+        `;
+    }
+
     const tags = [
-        `<span class="tag tag--date">${escapeHtml(event.dateLabel || event.date)}</span>`,
+        `<span class="tag tag--date">${escapeHtml(date)}</span>`,
         `<span class="tag">${escapeHtml(event.location)}</span>`,
     ];
 
-    if (event.cancelled) {
-        tags.push('<span class="tag tag--cancelled">Cancelled</span>');
-    }
+    if (cancelled) tags.push(cancelled);
 
     return `<div class="event-meta">${tags.join("")}</div>`;
 }
@@ -75,7 +106,7 @@ function renderEventCard(event, { upcoming = false } = {}) {
           ? `<h3 class="event-title">Next session</h3>`
           : "";
     const description = event.description
-        ? `<p>${escapeHtml(event.description)}</p>`
+        ? `<p class="event-description">${escapeHtml(event.description)}</p>`
         : "";
     const actions = upcoming ? renderEventActions() : "";
 
@@ -83,7 +114,7 @@ function renderEventCard(event, { upcoming = false } = {}) {
         <article class="${classes.join(" ")}">
             ${label}
             ${title}
-            ${renderEventMeta(event)}
+            ${renderEventMeta(event, { prominent: upcoming })}
             ${description}
             ${renderSpeakers(event.speakers)}
             ${actions}

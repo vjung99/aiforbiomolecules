@@ -53,7 +53,7 @@ body {
 }
 
 .page:has(.page-intro #upcoming-event:not([hidden])) {
-    max-width: 66rem;
+    max-width: 58rem;
 }
 
 .page-intro {
@@ -65,33 +65,50 @@ body {
 .page-intro:has(#upcoming-event:not([hidden])) {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: start;
+    gap: 2.25rem;
+    justify-items: center;
 }
 
-@container page (min-width: 58rem) {
-    .page-intro:has(#upcoming-event:not([hidden])) {
-        grid-template-columns: minmax(0, 1fr) minmax(24rem, 30rem);
-        gap: 3.75rem;
-    }
+.page-intro:has(#upcoming-event:not([hidden])) .hero {
+    width: 100%;
+    text-align: center;
 }
 
 .page-intro #upcoming-event:not([hidden]) {
     display: block;
+    width: 100%;
 }
 
 .page-intro .event-card--upcoming {
     margin-bottom: 0;
-    padding: 1.4rem;
+    padding: 1.85rem 2rem;
 }
 
 .page-intro .event-title {
-    font-size: 1.15rem;
+    font-size: 1.45rem;
+}
+
+.page-intro .event-label {
+    font-size: 0.84rem;
+}
+
+.page-intro .speaker-list {
+    margin-top: 1.1rem;
+    gap: 0.75rem;
+}
+
+.page-intro .speaker-list li {
+    padding: 0.9rem 1.05rem;
+}
+
+.event-description {
+    margin: 0 0 0.35rem;
+    color: var(--text-muted);
 }
 
 .event-actions {
-    margin-top: 1.1rem;
-    padding-top: 1.1rem;
+    margin-top: 1.35rem;
+    padding-top: 1.2rem;
     border-top: 1px solid var(--border);
 }
 
@@ -103,15 +120,6 @@ body {
     flex: 1 1 8.5rem;
     padding: 0.6rem 0.85rem;
     font-size: 0.9rem;
-}
-
-.page-intro .speaker-list {
-    margin-top: 0.75rem;
-    gap: 0.4rem;
-}
-
-.page-intro .speaker-list li {
-    padding: 0.5rem 0.65rem;
 }
 
 .site-nav {
@@ -231,6 +239,11 @@ header.hero,
     max-width: 38rem;
     margin: 0 0 0;
     line-height: 1.6;
+}
+
+.page-intro:has(#upcoming-event:not([hidden])) .hero .tagline {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .page-subtitle {
@@ -388,6 +401,21 @@ section:nth-of-type(4) h2 {
     margin-bottom: 0.85rem;
 }
 
+.event-meta--upcoming {
+    align-items: baseline;
+    gap: 0.35rem 0.5rem;
+    margin: 0.15rem 0 1rem;
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+.event-meta__sep {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
 .tag {
     display: inline-block;
     font-size: 0.82rem;
@@ -443,9 +471,28 @@ section:nth-of-type(4) h2 {
     background: var(--bg);
 }
 
+.speaker-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.35rem 0.85rem;
+}
+
 .speaker-name {
     display: block;
     font-weight: 600;
+}
+
+.speaker-time {
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    padding: 0.15rem 0.5rem;
+    border-radius: 6px;
+    white-space: nowrap;
 }
 
 .speaker-talk {
@@ -460,9 +507,74 @@ section:nth-of-type(4) h2 {
 
 .speaker-affiliation {
     display: block;
-    font-size: 0.92rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
-    margin-top: 0.1rem;
+    margin-top: 0.08rem;
+    line-height: 1.35;
+}
+
+.speaker-abstract {
+    margin-top: 0.65rem;
+}
+
+.speaker-abstract summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--accent-dark);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.speaker-abstract summary::-webkit-details-marker {
+    display: none;
+}
+
+.speaker-abstract summary::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(-45deg);
+    translate: 0 -0.05rem;
+}
+
+.speaker-abstract[open] summary::before {
+    transform: rotate(45deg);
+    translate: 0 -0.12rem;
+}
+
+.speaker-abstract summary:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+
+.speaker-abstract__hide {
+    display: none;
+}
+
+.speaker-abstract[open] .speaker-abstract__show {
+    display: none;
+}
+
+.speaker-abstract[open] .speaker-abstract__hide {
+    display: inline;
+}
+
+.speaker-description {
+    margin: 0.7rem 0 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    white-space: pre-wrap;
 }
 
 .archive-grid {
@@ -598,4 +710,112 @@ footer a:hover {
 
 footer p {
     margin: 0 0 0.75rem;
+}
+
+/* Biomolecule floating background */
+#biomolecule-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.biomolecule {
+    position: absolute;
+    transform-style: preserve-3d;
+    opacity: 0;
+    animation: float-molecule 35s linear infinite;
+}
+
+.biomolecule svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Layer 1 - Farthest, smallest, most subtle */
+.biomolecule.layer-1 {
+    z-index: 1;
+    filter: blur(5px);
+    opacity: 0.12;
+}
+
+/* Layer 2 - Middle distance */
+.biomolecule.layer-2 {
+    z-index: 2;
+    filter: blur(3px);
+    opacity: 0.2;
+}
+
+/* Layer 3 - Closest, still subtle */
+.biomolecule.layer-3 {
+    z-index: 3;
+    filter: blur(1.5px);
+    opacity: 0.3;
+}
+
+@keyframes float-molecule {
+    0% {
+        transform: 
+            translate3d(0, 0, 0) 
+            rotate(var(--rotate-start, 0deg))
+            scale(1);
+        opacity: 0;
+    }
+    5% {
+        opacity: inherit;
+    }
+    25% {
+        transform: 
+            translate3d(calc(var(--drift-x) * 0.3), calc(var(--drift-y) * 0.25), 20px) 
+            rotate(calc(var(--rotate-start) * 0.5 + var(--rotate-end) * 0.5))
+            scale(1.05);
+    }
+    50% {
+        transform: 
+            translate3d(calc(var(--drift-x) * 0.6), calc(var(--drift-y) * 0.5), 40px) 
+            rotate(calc(var(--rotate-end) * 0.7))
+            scale(1);
+    }
+    75% {
+        transform: 
+            translate3d(calc(var(--drift-x) * 0.85), calc(var(--drift-y) * 0.75), 20px) 
+            rotate(calc(var(--rotate-end) * 0.9))
+            scale(0.95);
+    }
+    95% {
+        opacity: inherit;
+    }
+    100% {
+        transform: 
+            translate3d(var(--drift-x), var(--drift-y), 0) 
+            rotate(var(--rotate-end, 360deg))
+            scale(1);
+        opacity: 0;
+    }
+}
+
+/* Ensure page content sits above background */
+.page {
+    position: relative;
+    z-index: 10;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .biomolecule {
+        animation: none;
+        opacity: 0.08;
+    }
+}
+
+/* Hide on small mobile screens for performance */
+@media (max-width: 480px) {
+    #biomolecule-bg {
+        display: none;
+    }
 }
